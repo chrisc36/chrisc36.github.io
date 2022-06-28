@@ -1,1 +1,244 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Christopher Clark Homepage">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Christopher Clark</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="" crossorigin="anonymous">
+    <style>
+      .myname {
+          font-style: italic;
+      }
+      .papertitle {
+          font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav id="home" class="navbar navbar-dark bg-dark navbar-expand-sm">
+      <ul class="nav navbar-nav" style="visibility: visible;">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#publications">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+    </ul>
+    </nav>
+
+    <div class="container">
+      <div class="pb-2 mt-4 mb-2 border-bottom">
+        <h1 style="font-family:Serif;font-size:200%"><b>Christopher Clark</b></h1>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-auto">
+          <img src="pic1.png" height="250" style="padding-right:5px">
+        </div>
+        <div class="col-sm my-auto">
+          <p class="lead" align="justify">I am a research scientist with <a href="https://prior.allenai.org/">PRIOR</a> team at the non-profit AI research institute the <a href="https://allenai.org/">Allen Institute for AI</a>.
+            My general research interests are in unified vision and language systems and out-of-domain generalization. My recent projects have involved training <a href="https://arxiv.org/abs/2206.08916">models</a> that can complete many multi-modal tasks with
+            a shared architecture. Previously I have worked on training models to play the drawing and guessing game <a href="https://arxiv.org/abs/2112.00800">Iconary</a>, and my PhD focused on ways to prevent models using spurious correlations or non-generalization
+            patterns found in the training data.
+          </p>
+          <p class="lead" align="justify">
+            I received by PhD from <a href="https://www.cs.washington.edu/">UW</a> where I was advised by
+            <a href="https://www.cs.washington.edu/people/faculty/lsz">Luke Zettlemoyer</a>. Before that I was a <a href="https://allenai.org/predoctoral-young-investigators">Predoctoral Young Investigator</a> at
+            the AI2 and completed a Masters at the <a href="https://www.ed.ac.uk/">University of Edinburgh</a>.
+          </p>
+      </div>
+      </div>
+
+      <h2 id="publications">Publications</h2>
+      <div style="font-size: 16px;">
+        <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <span class="papertitle">Unified-IO: A Unified Model for Vision, Language, and Multi-Modal Tasks</span>  <br>
+              Jiasen Lu*, <span class="myname">Christopher Clark*</span>, Rowan Zellers, Roozbeh Mottaghi, Aniruddha Kembhavi
+              <br>
+              [<a href="https://arxiv.org/abs/2206.08916">paper</a>]
+              [<a href="https://unified-io.allenai.org/">demo</a>]
+            </p>
+          </div>
+        </div>
+
+      <div class="media">
+        <div class="media-body">
+          <p class="media-heading">
+            <span class="papertitle">A-OKVQA: A Benchmark for Visual Question Answering using World Knowledge</span>  <br>
+            Dustin Schwenk, Apoorv Khandelwal, <span class="myname">Christopher Clark</span>, Kenneth Marino, Roozbeh Mottaghi
+            <br>
+            In EMNLP 2021
+            <br>
+            [<a href="https://arxiv.org/pdf/2206.01718.pdf">paper</a>]
+            [<a href="https://github.com/allenai/aokvqa">code</a>]
+            [<a href="https://allenai.org/project/a-okvqa/home">project page</a>]
+          </p>
+        </div>
+      </div>
+
+      <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <span class="papertitle">Webly Supervised Concept Expansion for General Purpose Vision Models</span>  <br>
+              Amita Kamath*, <span class="myname">Christopher Clark*</span>, Tanmay Gupta*, Eric Kolve, Derek Hoiem, Aniruddha Kembhavi<br>
+              In Submission
+              <br>
+              [<a href="https://arxiv.org/abs/2202.02317">paper</a>]
+              [<a href="https://github.com/allenai/gpv2">code</a>]
+              [<a href="https://vision-explorer.allenai.org/general_purpose_vision">demo</a>]
+              [<a href="https://prior.allenai.org/projects/gpv2">project page</a>]
+            </p>
+          </div>
+      </div>
+
+      <div class="media">
+        <div class="media-body">
+          <p class="media-heading">
+            <span class="papertitle">Iconary: A Pictionary-Based Game for Testing Multimodal Communication with Drawings and Text</span>  <br>
+            <span class="myname">Christopher Clark</span>, Jordi Salvador, Dustin Schwenk, Derrick Bonafilia, Mark Yatskar, Eric Kolve, Alvaro Herrasti, Jonghyun Choi, Sachin Mehta, Sam Skjonsberg, Carissa Schoenick, Aaron Sarnat, Hannaneh Hajishirzi, Aniruddha Kembhavi, Oren Etzioni, Ali Farhadi
+            <br>
+            In EMNLP 2021
+            <br>
+            [<a href="https://arxiv.org/abs/2112.00800">paper</a>]
+            [<a href="https://github.com/allenai/iconary">code</a>]
+          </p>
+        </div>
+      </div>
+
+      <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <span class="papertitle">Learning to Model and Ignore Dataset Bias with Mixed Capacity Ensembles</span>  <br>
+              <span class="myname">Christopher Clark</span>, Mark Yatskar, Luke Zettlemoyer<br>
+              In EMNLP Findings 2020
+              <br>
+              [<a href="https://arxiv.org/abs/2011.03856">paper</a>]
+              [<a href="https://github.com/chrisc36/autobias">code</a>]
+            </p>
+          </div>
+      </div>
+
+      <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <span class="papertitle">Don’t Take the Easy Way Out: Ensemble Based Methods for Avoiding Known Dataset Biases</span>  <br>
+              <span class="myname">Christopher Clark</span>, Mark Yatskar, Luke Zettlemoyer<br>
+              In EMNLP 2019
+              <br>
+              [<a href="https://arxiv.org/abs/1909.03683">paper</a>]
+              [<a href="https://github.com/chrisc36/debias">code</a>]
+            </p>
+          </div>
+      </div>
+      <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <span class="papertitle">BoolQ: Exploring the Surprising Difficulty of Natural Yes/No Questions</span>  <br>
+              <span class="myname">Christopher Clark</span>, Kenton Lee, Ming-Wei Chang, Tom Kwiatkowski, Michael Collins, Kristina Toutanova<br>
+              In NAACL 2019
+              <br>
+              [<a href="https://arxiv.org/abs/1905.10044">paper</a>]
+              [<a href="https://github.com/google-research-datasets/boolean-questions">dataset</a>]
+              [<a href="https://super.gluebenchmark.com/">leaderboard</a>]
+            </p>
+          </div>
+      </div>
+      <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <!-- <i><a href="https://aclweb.org/anthology/P18-1078">Simple and Effective Multi-Paragraph Reading Comprehension</a></i> -->
+               <span class="papertitle">Simple and Effective Multi-Paragraph Reading Comprehension </span>
+              <br>
+              <span class="myname">Christopher Clark</span>, Matt Gradner<br>
+              In ACL 2018 <br>
+              [<a href="https://aclweb.org/anthology/P18-1078">paper</a>]
+              [<a href="http://github.com/allenai/document-qa">code</a>]
+              [<a href="https://documentqa.allenai.org/">demo</a>]
+            </p>
+          </div>
+      </div>
+
+      <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <span class="papertitle">Deep Contextualized Word Representations</span>  <br>
+              Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, <span class="myname">Christopher Clark</span>, Kenton Lee, Luke Zettlemoyer <br>
+              In NAACL 2018 <br>
+              [<a href="https://arxiv.org/pdf/1802.05365.pdf">paper</a>]
+              [<a href="https://allennlp.org/elmo">website</a>]
+            </p>
+          </div>
+      </div>
+
+      <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <span class="papertitle">
+                IKE - An Interactive Tool for Knowledge Extraction
+              </span>  <br>
+              Bhavana Dalvi, Sumithra Bhakthavatsalam, <span class="myname">Chris Clark</span>, Peter Clark, Oren Etzioni, Anthony Fader, Dirk Groeneveld<br>
+              In AKBC at NAACL 2016 <br>
+              [<a href="https://pdfs.semanticscholar.org/9bcc/590ecdbdf6121990f407987a90627a1dff3a.pdf">paper</a>]
+              [<a href="https://allenai.org/software/interactive-knowledge-extraction/">website</a>] [<a href="https://github.com/allenai/ike">code</a>]
+            </p>
+          </div>
+      </div>
+
+      <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <span class="papertitle">PDFFigures 2.0: Mining Figures from Research Papers</span>  <br>
+              <span class="myname">Christopher Clark</span>, Jieyu Zhao, Mark Yatskar, Kai-Wei Chang, Vicente Ordonez.<br>
+              In JCDL 2016 <br>
+              [<a href="https://ai2-website.s3.amazonaws.com/publications/pdf2.0.pdf">paper</a>]
+              [<a href="http://pdffigures2.allenai.org/">website</a>]
+              [<a href="https://github.com/allenai/pdffigures2">code</a>]
+            </p>
+          </div>
+      </div>
+
+      <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <span class="papertitle">Looking Beyond Text: Extracting Figures, Tables, and Captions from Computer Science Papers</span>  <br>
+              <span class="myname">Christopher Clark</span>, Santosh Divvala<br>
+              In Workshop on Scholarly Big Data at AAAI 2015<br>
+              [<a href="https://sites.google.com/a/allenai.org/figure-extractor/paper.pdf">paper</a>]
+              [<a href="http://pdffigures.allenai.org/">website</a>]
+              [<a href="https://github.com/allenai/pdffigures">code</a>]
+            </p>
+          </div>
+      </div>
+
+      <div class="media">
+          <div class="media-body">
+            <p class="media-heading">
+              <span class="papertitle">Training Deep Convolutional Neural Networks to Play Go</span>  <br>
+              <span class="myname">Christopher Clark</span>, Amos Storkey<br>
+              In ICML 2015<br>
+              [<a href="http://proceedings.mlr.press/v37/clark15.pdf">paper</a>]
+              [<a href="https://chrisc36.github.io/deep-go/">demo</a>]
+            </p>
+          </div>
+      </div>
+      </div>
+      <h3 id="contact">Contact</h3>
+      <div style="padding-top: 5px; padding-bottom: 3px"> chrisc@allenai.org </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
+  </body>
+</html>
