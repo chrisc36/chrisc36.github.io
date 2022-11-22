@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html style="height: 100%">
+  <!-- Modified from http://static.jgoboard.com/jgoboard/demoSGF.html by Joonas Pihlajamaa-->
+  <head>
+    <title>Play Go Against a DCNN</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="playgo.css" type="text/css">
+    <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css", type="text/css">
+  </head>
+  <body style="height: 100%">
+    <div id="contentBlock">
+      <center>
+        <h1>Play Go Against a Deep Neural Network</h1>
+      </center>
+      <div style="display: inline-block;">
+        <div style="float: left">
+          <div id="spinner" style="width: 534px; height: 534px; position: relative"></div>
+          <div id="board-preview"></div>
+          <div id="board" style="display: none"></div>
+          <p class="controls" style="width: 500px;">
+            <a href="#" onclick="goToMove(-1000); return false;"><i class="fa fa-fast-backward"></i></a>
+            <a href="#" onclick="goToMove(-10); return false;"><i class="fa fa-backward"></i></a>
+            <a href="#" onclick="goToMove(-1); return false;"><i class="fa fa-step-backward"></i></a>
+            <strong id="move">0</strong> / <strong id="moves">0</strong>
+            <a href="#" onclick="goToMove(1); return false;"><i class="fa fa-step-forward"></i></a>
+            <a href="#" onclick="goToMove(10); return false;"><i class="fa fa-forward"></i></a>
+            <a href="#" onclick="goToMove(1000); return false;"><i class="fa fa-fast-forward"></i></a>
+          </p>
+        </div>
+        <div style="float: left; padding: 1em; text-align: left; margin-left: 10px; margin-top: 40px">
+          <input id="autoMoveCheckbox" type="checkbox" title="Have the neural network play moves in response to your moves" checked>Auto Move</input> <br>
+          <input id="showAnalysis" type="checkbox" onclick="showAnalysisClicked()" title="Impose a heatmap on the board showing which moves the neural networks thinks are the strongest"
+                 unchecked>Show Analysis</input> <br>
+          <button id="makeMoveButton" type="button" onclick="convMove()" title="Make the neural network play a move">Make Move</button> <br>
+          <p>
+            Black captures: <strong id="black_captures">0</strong><br>
+            White captures: <strong id="white_captures">0</strong>
+          </p>
+        </div>
+      </div>
+      <div positions="bottom: 0;">
+        <h1>About</h1>
+        <ul style="text-align: left; font-size:14px">
+          <li>Your opponent is a deep convolutional neural network trained to play Go</li>
+          <li>The network was trained to make moves similar to the moves made by professional players <br> in a dataset of over 80,000 professional Go games</li>
+          <li>Press 'Make Move' to have the network make a move</li>
+          <li>If 'Auto Move' is checked the network will automatically respond to your moves</li>
+          <li>Check 'Show Analysis' to see a which moves the network thinks are the strongest for the <br> current position and player</li>
+          <li>Use the arrows to undo/redo moves</li>
+          <li>See our <a href="http://jmlr.org/proceedings/papers/v37/clark15.pdf">paper</a> for more detail</li>
+          <li><a href="net.js">Download</a> the network as a convnetjs network</li>
+          <li>Website powered by the excellent <a href="http://jgoboard.com/">jgoboard</a> and <a href="http://cs.stanford.edu/people/karpathy/convnetjs/">convnetjs</a> libraries</li>
+        </ul>
+        <h3 style="margin-bottom: 3px">Contact</h3>
+        Christopher Clark, csquared@cs.washington.edu <br>
+        Amos Storkey, a.storkey@ed.ac.uk
+      </div>
+    </div>
+    </script>
+    <script src="spin.min.js"></script>
+    <script>
+      // Draw a spinner to show while loading
+      var opts = { scale: 2.5 };
+      var target = document.getElementById('spinner');
+      var spinner = new Spinner(opts).spin(target);
+    </script>
+    <script src="jgoboard-3.4.2.js"></script>
+    <script src="medium/board.js"></script>
+    <script>
+      // Draw a temporary board to show while loading
+      var jboard = new JGO.Board(19, 19);
+      var jsetup = new JGO.Setup(jboard, JGO.BOARD.medium);
+      jsetup.setOptions({stars: {points:5}});
+      jsetup.create('board-preview', function(canvas) {
+        var target = document.getElementById('spinner');
+        target.style.position = "absolute"; // Make we are behind, not next, the spinner
+      })
+    </script>
+    <!-- Load the convent library, the net itself, and the script to allow playing. This is the slow part -->
+    <script src="convnet-min.js"></script>
+    <script src="net.js"></script>
+    <script src="man_vs_machine.js"></script>
+    <script>
+      // Remove all the loading icons
+      spinner.stop();
+      document.getElementById('spinner').remove();
+      document.getElementById('board-preview').remove();
+      document.getElementById('board').style.display = "block";
+    </script>
+  </body>
+</html>
